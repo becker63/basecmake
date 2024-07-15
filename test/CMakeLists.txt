@@ -19,3 +19,7 @@ set(doctestcmakefilesrc "${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/share/do
 # do the doctest stuff
 include(${doctestcmakefilesrc})
 doctest_discover_tests(tester)
+
+# ctest stuff
+enable_testing()
+add_test(NAME doctest COMMAND tester --config $<CONFIG>)
