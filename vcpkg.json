@@ -1,9 +1,5 @@
 {
   "name": "main",
   "version-string": "latest",
-  "dependencies": [
-    "fmt",
-    "boost-config",
-    "sqlite3"
-  ]
+  "dependencies": ["fmt", "doctest"]
 }
