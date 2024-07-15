@@ -2,7 +2,8 @@
 #include <cstdio>
 #include <fmt/core.h>
 #include <doctest/doctest.h>
-#include "../include/public/main.h"
+#include <main.h>
+
 
 int factorial(int number) { return number <= 1 ? number : factorial(number - 1) * number; }
 

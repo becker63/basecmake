@@ -5,14 +5,13 @@ FILE(GLOB_RECURSE lib_src CONFIGURE_DEPENDS ${CMAKE_SOURCE_DIR}/src/*.cpp )
 
 # compile and link
 add_executable(tester testmain.cpp ${lib_src})
-target_link_libraries(tester doctest::doctest)
+target_link_libraries(tester doctest::doctest main)
 set_property(TARGET main PROPERTY CXX_STANDARD 23)
 
 # get include dirs
 file(GLOB_RECURSE headers_internal CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/include/*.h")
 file(GLOB_RECURSE headers_public CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/src/*.h")
 set(headers ${headers_internal} ${headers_public})
-include_directories(tester PRIVATE ${headers})
 
 # this aint great
 set(doctestcmakefilesrc "${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/share/doctest/doctest.cmake")
